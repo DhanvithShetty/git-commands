@@ -4,7 +4,7 @@ To create an empty git repository and maintain the history of a project, use the
 This will create a .git hidden folder that maintains the history of the project.
 
 To list all the untracked/tracked files in the repository, use the command `git status` <br>
-This will show you all the files that are either untracker or tracked(new/modified/deleted).
+This will show you all the files that are either untracked or tracked(new/modified/deleted).
 
 ## How To Make Changes In Your Repository
 
@@ -57,9 +57,9 @@ git merge branch_name
 
 Now, all the commits made in `branch_name` will be added to `main` branch.
 
-## How To Work With Exisiting Repositories
+## How To Work With Existing Repositories
 
-To be able to make the changes you want to a repository that you dont have access to, you have to do the following steps:
+To be able to make the changes you want to a repository that you don't have access to, you have to do the following steps:
 
 Fork the repository on GitHub. <br>
 This step creates a copy of the existing repository under your account using which now allows you to make changes to the copied repository.
@@ -95,3 +95,24 @@ git push origin main
 git pull upstream main
 git push origin main
 ```
+
+## How To Combine Several Commits Into A Single Commit
+
+Let us say that you have made several commits and `git log` shows multiple commits, to squash(combine) several commits, do the following:
+
+Copy the hash of the commit where the **HEAD** pointer is.
+Use the command: `git rebase -i commit's_hash`
+
+You should now be able to see all the commits hash which has been reduced to a smaller size with the word pick.
+
+To combine several commits into one, choose the commit that you want to appear in the log and let the keyword before the hash of that commit be **pick**.
+
+Let all the other commit that you want to join into the **picked** commit be **squash**.
+
+**Squash basically merges the corresponding commit to the previous pick.**
+
+Escape out of the command and write `:x`. <br>
+This lets you write a message for the commit
+Escape out of the command and write `:x`. <br>
+
+You can check out the merged commits in `git log`
