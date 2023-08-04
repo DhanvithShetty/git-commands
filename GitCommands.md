@@ -24,7 +24,7 @@ To delete a file from the repo, we use the command `rm -rf file_name`<br>
 Eg: rm -rf main.py<br>
 git commit -m "Deleted main.py"<br>
 
-Need to learn how to get back to a certain commit in the past, didn't understand it well enough.<br>
+To go back to a particular commit, use `git reset --hard commit_hash_id`. The hash ID is to be found from `git log`. This command deletes any changes made after the specific commit. <br>
 
 To link your local project to a github repo, we write the command `git remote add origin repo_url`<br>
 Eg: git remote add origin https://github.com/DhanvithShetty/git-commands.git <br>
