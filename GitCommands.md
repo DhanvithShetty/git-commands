@@ -6,7 +6,7 @@ This will create a .git hidden folder that maintains the history of the project.
 To list all the untracked/tracked files in the repository, use the command `git status` <br>
 This will show you all the files that are either **untracked or tracked(new/modified/deleted)**.<br>
 
-## How To Make Changes In Your Repository
+## <u>How To Make Changes In Your Repository</u>
 
 To stage the changes, ie. track the changes made in the repository/project we use the command `git add`.<br>
 The . means that we will stage all the files in the project for tracking. The dot can be replaced by individual file names.<br>
@@ -24,7 +24,9 @@ To delete a file from the repo, we use the command `rm -rf file_name`<br>
 Eg: rm -rf main.py<br>
 git commit -m "Deleted main.py"<br>
 
-To go back to a particular commit, use `git reset --hard commit_hash_id`. The hash ID is to be found from `git log`. This command deletes any changes made after the specific commit. <br>
+To go back to a particular commit, use `git reset --hard commit_hash_id`. <br>
+The hash ID is found from `git log`.<br>
+This command **<u>deletes any changes</u>** made after the specific commit. <br>
 
 To link your local project to a github repo, we write the command `git remote add origin repo_url`<br>
 Eg: git remote add origin https://github.com/DhanvithShetty/git-commands.git <br>
@@ -34,7 +36,7 @@ To check what repo you are in we use `git remote -v`<br>
 To push your changes, we use the command `git push origin branch_name`<br>
 Eg: git push origin main<br>
 
-## How To Use Branches
+## <u>How To Use Branches</u>
 
 To create a branch, we use the command: `git branch branch_name` <br>
 Eg: `git branch new-feature`<br>
@@ -57,7 +59,7 @@ git merge branch_name
 
 Now, all the commits made in `branch_name` will be added to `main` branch.<br>
 
-## How To Work With Existing Repositories
+## <u>How To Work With Existing Repositories</u>
 
 To be able to make the changes you want to a repository that you don't have access to, you have to do the following steps:<br>
 
@@ -70,9 +72,9 @@ This step will create a folder in your pc that contains the files of the reposit
 We can add the upstream url to our project using the command: `git remote add upstream repo_url`<br>
 The place from where you have forked the repository is known as upstream url.<br>
 
-## Pull Requests
+## <u>Pull Requests</u>
 
-**REMEMBER: 1 BRANCH = 1 PULL REQUEST**
+**<u>REMEMBER: 1 BRANCH = 1 PULL REQUEST</u>**
 
 To merge pull requests, head over to the Pull Requests Tab in the repository in GitHub and confirm the merge after checking the code.<br>
 
@@ -96,7 +98,7 @@ git pull upstream main
 git push origin main
 ```
 
-## How To Combine Several Commits Into A Single Commit
+## <u>How To Combine Several Commits Into A Single Commit</u>
 
 Let us say that you have made several commits and `git log` shows multiple commits, to squash(combine) several commits, do the following:<br>
 
@@ -116,3 +118,21 @@ This lets you write a message for the commit.<br>
 Escape out of the command and write `:x`. <br>
 
 You can check out the merged commits in `git log`<br>
+
+## <u>What Are Merge Conflicts And How To Resolve Them</u>
+
+A Merge Conflict occurs when you or any of your team members make **conflicting changes** to the same file from two different branches.<br>
+
+A sample scenario of a merge conflict could look like this:
+
+You work in branch `main` and you make changes to line 1 of a `mytext.txt` file, say Hi World.<br>
+
+You switch to branch `new-feature` and you make a change to the same line two of `mytext.txt`, say Hello Earth.<br>
+
+If you **attempt to merge** the branch `new-feature` to `main`, Git won’t be able to automatically decide which one to accept between **Hi World** and **Hello Earth**. So, Git will raise a **merge conflict error** and tell you to **<u>manually resolve the conflict</u>** and you can do so using GitHub.
+
+## <u>Additional Resources:</u>
+
+**[Understand Merge Conflicts Better](https://www.freecodecamp.org/news/how-to-fix-merge-conflicts-in-git/#whatisamergeconflictingit)**
+
+**[Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)**
